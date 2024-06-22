@@ -18,7 +18,7 @@ const products=[
     {
         id:"3",
         image:require('../images/denim.avif'),
-        name:"Mens Denim Shirt with Flap",
+        name:"Mens Denim Shirt  Flap",
         price:"₹660",
         category:"view",
         description:"Regular denim shirt with 100% cotton Here's presenting a houseful of classic aviators, voguish wayfarers, chic cat-eye, and retro shades that you can own for a timeless look.",
@@ -26,7 +26,7 @@ const products=[
     {
         id:"4",
         image:require('../images/striped.avif'),
-        name:"Mens Shirt Striped Cotton ",
+        name:"Mens Shirt  Cotton ",
         price:"₹1000",
         category:"view",
         description:"Regular denim shirt with 100% cotton Here's presenting a houseful of classic aviators, voguish wayfarers, chic cat-eye, and retro shades that you can own for a timeless look.",
@@ -34,7 +34,7 @@ const products=[
     {
         id:"5",
         image:require('../images/men-pants.avif'),
-        name:"Mens Pants Fit Trousers",
+        name:"Mens Pants  Trousers",
         price:"₹1,599",
         category:"view",
         description:"Tapered Fit Trousers with 100% cotton Here's presenting a houseful of classic aviators, voguish wayfarers, chic cat-eye, and retro shades that you can own for a timeless look.",
@@ -42,7 +42,7 @@ const products=[
     {
         id:"6",
         image:require('../images/cargo.avif'),
-        name:"Mens Pants Straight Fit Cargo ",
+        name:"Mens Pants  Fit Cargo ",
         price:"₹410",
         category:"view",
         description:"Men Straight Fit Cargo Pants with Insert Pockets with 100% cotton Here's presenting a houseful of classic aviators, voguish wayfarers, chic cat-eye, and retro shades that you can own for a timeless look.",

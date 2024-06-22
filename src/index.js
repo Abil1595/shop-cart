@@ -7,7 +7,9 @@ import 'remixicon/fonts/remixicon.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Provider } from 'react-redux';
 import store from './features/cart/store';
+import { getTotals } from './features/cart/cartSlice';
 const root = ReactDOM.createRoot(document.getElementById('root'));
+store.dispatch(getTotals());
 root.render(
   <Provider store={store}>
     <App />

@@ -2,9 +2,27 @@ import React,{useState} from 'react'
 import products from '../ProductData/ProductDetails';
 import {  Col, Container, Row } from 'reactstrap';
 import { useDispatch } from 'react-redux';
-import { addTocart } from '../features/cart/cartSlice';
-function Home() {
-    
+import { addToCart } from '../features/cart/cartSlice';
+import { auth } from '../firebase';
+function Home({user1,setUser1}) {
+  const [pass,setPass]=useState('')
+  const [user,setUser]=useState(null)
+  const handleLogout=async()=>{
+        
+    try{
+       await auth.signOut()
+     setUser1("guest")
+   
+    const details="user is logged out"
+    setPass(details)
+   
+    }
+    catch(error )
+    {
+        console.log(error)
+        alert(error)
+    }
+}
    
     const [hide,setHide]=useState(true)
     const [addDetail,setAddDetail]=useState({
@@ -19,7 +37,7 @@ function Home() {
     const [searchresults,setSearchresults]=useState([])
     const dispatch=useDispatch()
     const handleAddToCart = () => {
-        dispatch(addTocart());
+        dispatch(addToCart());
       };
     const handleSearchChange=(e)=>{
       setSearchterm(e.target.value)
@@ -40,7 +58,10 @@ console.log("check",viewpage)
   return (
     <div className="App">
         <Container fluid>
-
+     <h1>Hello {user1}</h1>
+     <h1>{user?.email}</h1>
+     
+     <button onClick={handleLogout}>Logout</button>
       <div className='search-input' >
         <select onChange={handleSearchChange} value={searchterm} className='select-input'>
           <option>Mens Shirt</option>
@@ -57,13 +78,13 @@ console.log("check",viewpage)
        {searchresults.map(product=>(
         <div className='prod-details' key={product.id}>
          <div className='prod-image'>
-           <img src={product.image} alt=''/>
+           <img src={product.image} alt='' className='pro'/>
          </div>
          <div className='prod-des'>
          <p>{product.name}</p>
          <p>{product.price}</p>
          <p>{product.description}</p>
-         <button className='shirt-button' onClick={()=>{dispatch(addTocart(product))}}>Add to Bag</button>
+         <button className='shirt-button' onClick={()=>{dispatch(addToCart(product))}}>Add to Bag</button>
          </div>
         </div>
        ))}
